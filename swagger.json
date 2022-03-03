@@ -1,0 +1,513 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Classroom",
+        "description": "Classroom Application API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "paths": {
+        "/api/students/create": {
+            "post": {
+                "summary": "Create a new student",
+                "tags": [
+                    "Students"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/createStudent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/students": {
+            "get": {
+                "summary": "Get all students",
+                "tags": [
+                    "Students"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/students"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/students/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of students that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Get student by ID",
+                "tags": [
+                    "Students"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/students"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/students/delete": {
+            "delete": {
+                "summary": "Delete student with given ID",
+                "tags": [
+                    "Students"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/deleteStudent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/students/edit": {
+            "put": {
+                "summary": "Update student with given ID",
+                "tags": [
+                    "Students"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/editStudent"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/cources/create": {
+            "post": {
+                "summary": "Create a new course",
+                "tags": [
+                    "Cources"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/createCourse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/cources": {
+            "get": {
+                "summary": "Get all cources",
+                "tags": [
+                    "Cources"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/cources"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cources/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of course that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Get course by ID",
+                "tags": [
+                    "Cources"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/cources"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/cources/delete": {
+            "delete": {
+                "summary": "Delete course with given ID",
+                "tags": [
+                    "Cources"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/deleteCourse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/cources/edit": {
+            "put": {
+                "summary": "Update course with given ID",
+                "tags": [
+                    "Cources"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/editCourse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/assignments/create": {
+            "post": {
+                "summary": "Create a new assignment",
+                "tags": [
+                    "Assignments"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/createAssignment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/assignments": {
+            "get": {
+                "summary": "Get all assignments",
+                "tags": [
+                    "Assignments"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/assignments"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/assignments/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of assignment that we want to find",
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "summary": "Get assignment by ID",
+                "tags": [
+                    "Assignments"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/assignments"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/assignments/delete": {
+            "delete": {
+                "summary": "Delete assignment with given ID",
+                "tags": [
+                    "Assignments"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/deleteAssignment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/assignments/pass": {
+            "put": {
+                "summary": "Pass assignment with given ID",
+                "tags": [
+                    "Assignments"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/passAssignment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "createStudent": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "surname": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                }
+            }
+        },
+        "deleteStudent": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "editStudent": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "surname": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "students": {
+            "properties": {
+                "status": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "surname": {
+                                "type": "string"
+                            },
+                            "age": {
+                                "type": "integer"
+                            },
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "createCourse": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "hours": {
+                    "type": "integer"
+                }
+            }
+        },
+        "deleteCourse": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "editCourse": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "hours": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "cources": {
+            "properties": {
+                "status": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "hours": {
+                                "type": "integer"
+                            },
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "createAssignment": {
+            "properties": {
+                "studentId": {
+                    "type": "integer"
+                },
+                "courseId": {
+                    "type": "integer"
+                },
+                "isPassed": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "deleteAssignment": {
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "passAssignment": {
+            "properties": {
+                "isPassed": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "assignments": {
+            "properties": {
+                "status": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "studentId": {
+                                "type": "integer"
+                            },
+                            "courseId": {
+                                "type": "integer"
+                            },
+                            "isPassed": {
+                                "type": "boolean"
+                            },
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

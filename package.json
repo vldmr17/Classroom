@@ -1,0 +1,14 @@
+{
+  "name": "Classroom",
+  "version": "1.0.0",
+  "dependencies": {
+    "app-root-path": "^3.0.0",
+    "body-parser": "^1.19.1",
+    "express": "^4.16.4",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "swagger-ui-express": "^4.3.0",
+    "winston": "^3.6.0"
+  }
+}
